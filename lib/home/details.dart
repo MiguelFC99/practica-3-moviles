@@ -33,7 +33,11 @@ class _DetailsState extends State<Details> {
       b = false;
     }
 
-    return b ? _escaffoldBarcode() : _escaffoldImageLabeled();
+    if(b){
+      return _escaffoldBarcode();
+    }else{
+      return _escaffoldImageLabeled();
+    } 
   }
 
   Widget _escaffoldImageLabeled() {
@@ -42,25 +46,29 @@ class _DetailsState extends State<Details> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              Image.memory(imageBytes),
-              SizedBox(
-                height: 15,
-              ),
-              Text(">id: ${widget.imageLabeled.identificador}"),
-              SizedBox(
-                height: 10,
-              ),
-              Text(">Label: ${widget.imageLabeled.texto}"),
-              SizedBox(
-                height: 10,
-              ),
-              Text(">Certeza: ${widget.imageLabeled.similitud}"),
-              SizedBox(
-                height: 10,
-              ),
-            ],
+          child: Container(
+            color: Colors.blueAccent[100],
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image.memory(imageBytes),
+                SizedBox(
+                  height: 25,
+                ),
+                Text(">id: ${widget.imageLabeled.identificador}"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(">Label: ${widget.imageLabeled.texto}"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(">Certeza: ${widget.imageLabeled.similitud}"),
+                SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -72,40 +80,45 @@ class _DetailsState extends State<Details> {
       appBar: AppBar(title: Text("Detalles")),
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: <Widget>[
-              //Image.memory(imageBytes),
-              CustomPaint(
-                foregroundPainter:
-                    RectPainter(pointsList: widget.barcode.puntosEsquinas),
-                child: Image.memory(imageBytes),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Text("Codigo: ${widget.barcode.codigo}"),
-              SizedBox(
-                height: 10,
-              ),
-              Text("Formato: ${widget.barcode.tipoCodigo}"),
-              SizedBox(
-                height: 10,
-              ),
-              Text("Titulo de URL: ${widget.barcode.tituloUrl}"),
-              SizedBox(
-                height: 10,
-              ),
-              Text("URL: ${widget.barcode.url}"),
-              SizedBox(
-                height: 10,
-              ),
-              Text("Area de codigo: ${widget.barcode.areaDeCodigo}"),
-              SizedBox(
-                height: 10,
-              ),
-              Text("Esquinas: ${widget.barcode.puntosEsquinas}")
-            ],
+          padding: const EdgeInsets.all(10.0),
+          child: Container(
+            color: Colors.blueAccent[100],
+            
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                //Image.memory(imageBytes),
+                CustomPaint(
+                  foregroundPainter:
+                      RectPainter(pointsList: widget.barcode.puntosEsquinas),
+                  child: Image.memory(imageBytes),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text("> Codigo: ${widget.barcode.codigo}"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("> Formato: ${widget.barcode.tipoCodigo}"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("> Titulo de URL: ${widget.barcode.tituloUrl}"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("> URL: ${widget.barcode.url}"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("> Area de codigo: ${widget.barcode.areaDeCodigo}"),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("> Esquinas: ${widget.barcode.puntosEsquinas}")
+              ],
+            ),
           ),
         ),
       ),

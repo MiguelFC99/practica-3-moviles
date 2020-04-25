@@ -69,7 +69,7 @@ class _BarcodeScannerState extends State<BarcodeScanner>
                               backgroundColor: Colors.amber[50],
                             ),
                             title: Text(
-                              "$index - Codigo ${_appBloc.getBarcodeItemsList[index].tipoCodigo}",
+                              "$index -. Codigo:  ${_appBloc.getBarcodeItemsList[index].tipoCodigo}",
                             ),
                             onTap: () {
                               // TODO: mostrar detalle

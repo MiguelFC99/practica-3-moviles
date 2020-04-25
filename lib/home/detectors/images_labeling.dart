@@ -69,7 +69,7 @@ class _ImagesLabelingState extends State<ImagesLabeling>
                               backgroundColor: Colors.amber[50],
                             ),
                             title: Text(
-                              "$index - Codigo ${_appBloc.getLabeledItemsList[index].identificador}",
+                              "$index -. Similitud:  ${_appBloc.getLabeledItemsList[index].similitud}",
                             ),
                             onTap: () {
                               // TODO: mostrar detalle
