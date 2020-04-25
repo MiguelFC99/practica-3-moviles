@@ -14,7 +14,7 @@ class _NewPictureState extends State<NewPicture> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Agregar imagen")),
+      appBar: AppBar(title: widget.b ? Text("Agregar imagen Labeling"): Text("Agregar imagen Barcode")),
       body: BlocListener<ApplicationBloc, ApplicationState>(
         listener: (context, state) {
           if (state is ErrorState) {
