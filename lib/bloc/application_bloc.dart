@@ -101,7 +101,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
           codigo: item.rawValue,
           tipoCodigo: item.valueType.toString(),
           tituloUrl: item.url == null ? "No disponible" : item.url.title,
-          url: item.url == null ? "No disponible" : item.url,
+          url: item.url,
           areaDeCodigo: item.boundingBox,
           puntosEsquinas: item.cornerPoints);
 

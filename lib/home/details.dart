@@ -55,15 +55,15 @@ class _DetailsState extends State<Details> {
                 SizedBox(
                   height: 25,
                 ),
-                Text(">id: ${widget.imageLabeled.identificador}"),
+                Text("> id: ${widget.imageLabeled.identificador}"),
                 SizedBox(
                   height: 10,
                 ),
-                Text(">Label: ${widget.imageLabeled.texto}"),
+                Text("> Label: ${widget.imageLabeled.texto}"),
                 SizedBox(
                   height: 10,
                 ),
-                Text(">Certeza: ${widget.imageLabeled.similitud}"),
+                Text("> Certeza: ${widget.imageLabeled.similitud}"),
                 SizedBox(
                   height: 10,
                 ),
